@@ -1,0 +1,26 @@
+{
+  "name": "workspace",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/marcpre/learning_npm_sequelize.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/marcpre/learning_npm_sequelize/issues"
+  },
+  "homepage": "https://github.com/marcpre/learning_npm_sequelize#readme",
+  "dependencies": {
+    "dotenv": "^4.0.0",
+    "pg": "^7.4.0",
+    "pg-hstore": "^2.3.2",
+    "sequelize": "^4.22.8"
+  }
+}
