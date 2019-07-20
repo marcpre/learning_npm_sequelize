@@ -1,6 +1,6 @@
 const faker = require('faker');
 
-const models = require('../../models');
+const models = require('../../src/models');
 
 /**
  * Generate an object which contains attributes needed

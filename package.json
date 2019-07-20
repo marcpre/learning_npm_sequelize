@@ -23,6 +23,7 @@
   "homepage": "https://github.com/marcpre/learning_npm_sequelize#readme",
   "dependencies": {
     "dotenv": "^4.0.0",
+    "faker": "^4.1.0",
     "mysql2": "^1.6.5",
     "pg": "^7.4.0",
     "pg-hstore": "^2.3.2",
@@ -30,6 +31,7 @@
   },
   "devDependencies": {
     "chai": "^4.2.0",
+    "chai-datetime": "^1.5.0",
     "eslint": "^4.9.0",
     "eslint-config-airbnb": "^16.1.0",
     "eslint-config-airbnb-base": "^12.1.0",
