@@ -6,7 +6,7 @@ module.exports = (sequelize, DataTypes) => {
     period: DataTypes.STRING,
     amount: DataTypes.FLOAT,
     yield: DataTypes.FLOAT,
-    exdividend_date: DataTypes.FLOAT,
+    exdividend_date: DataTypes.DATE,
     record_date: DataTypes.DATE,
     payable_date: DataTypes.DATE,
   }, {})
