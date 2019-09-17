@@ -1,6 +1,6 @@
-const faker = require('faker');
+const faker = require('faker')
 
-const models = require('../../models');
+const models = require('../../src/models')
 
 /**
  * Generate an object which contains attributes needed
@@ -11,7 +11,7 @@ const models = require('../../models');
  * @return {Object}  An object to build the user from.
  */
 const data = async (props = {}) => {
-  const defaultProps = {   
+  const defaultProps = {
     announced: faker.date.recent(-1),
     period: faker.random.arrayElement(['quarterly', 'monthly', 'yearly']),
     amount: faker.random.number(),
@@ -19,10 +19,11 @@ const data = async (props = {}) => {
     exdividend_date: faker.date.recent(-1),
     record_date: faker.date.recent(-1),
     payable_date: faker.date.recent(-1),
-  };
+    CompanyId: props.dataValues.id,
+  }
 
-  return Object.assign({}, defaultProps, props);
-};
+  return Object.assign({}, defaultProps, props)
+}
 
 /**
  * Generates a user instance from the properties provided.
@@ -31,14 +32,14 @@ const data = async (props = {}) => {
  *
  * @return {Object} A user instance
  */
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports.default = void 0;
+Object.defineProperty(exports, '__esModule', {
+  value: true,
+})
+exports.default = void 0
 
-var _default = async function _default() {
-  var props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
-  return models.Dividend.create((await data(props)));
-};
+let _default = async function _default() {
+  const props = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {}
+  return models.Dividend.create((await data(props)))
+}
 
-exports.default = _default;
+exports.default = _default

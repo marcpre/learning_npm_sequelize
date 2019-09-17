@@ -1,0 +1,4 @@
+
+> workspace@1.0.0 test C:\Users\marcus\Desktop\Coding_Projects\learning_npm_sequelize
+> set NODE_ENV=test&& mocha
+
