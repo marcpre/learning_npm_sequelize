@@ -25,6 +25,9 @@ async function createOrUpdateCompany(dataArray) {
         // 1. remove exact dedupes from dataArray
         dataArray = [...new Map(dataArray.map(obj => [JSON.stringify(obj), obj])).values()]
 
+        // 1.1 remove dedupes if the same symbol exists
+        dataArray = dataArray.filter((v,i,a)=>a.findIndex(t=>(t.symbol === v.symbol))===i)
+
         // 2. compare dataArray to allCompanies and remove difference
         // dataArray = dataArray.filter(cv => !allCompanies.find(e => e.symbol === cv.symbol))
         dataArray = dataArray.filter(cv => !allCompanies.find(e => e.symbol === cv.symbol))
@@ -40,7 +43,8 @@ async function createOrUpdateCompany(dataArray) {
                 'url',
                 'symbol',
                 'description',
-            ]
+            ],
+            updateOnDuplicate: ['symbol']
         })
     } catch (error) {
         console.log(error)
@@ -49,22 +53,22 @@ async function createOrUpdateCompany(dataArray) {
 }
 
 let data = [{
-    "date": "9/13/2019",
-    "issuer": "Issuer1",
+    "date": "9/14/2019",
+    "issuer": "Issuer6",
     "name": "Name1",
-    "symbol": "Test2",
+    "symbol": "Symbol2",
     "url": "www.url.com"
 }, {
-    "date": "9/13/2019",
-    "issuer": "Issuer1",
+    "date": "9/11/2029",
+    "issuer": "Issuer3",
     "name": "Name1",
-    "symbol": "Test1",
+    "symbol": "Symbol1",
     "url": "www.url.com"
 }, {
-    "date": "9/13/2019",
+    "date": "8/13/2019",
     "issuer": "Issuer1",
     "name": "Name1",
-    "symbol": "Test1",
+    "symbol": "Symbol1",
     "url": "www.url.com"
 }]
 
